@@ -1,4 +1,4 @@
-# openapi_client.model.program.Program
+# cloud_api_robot_client.model.program.Program
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

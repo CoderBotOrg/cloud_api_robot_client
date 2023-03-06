@@ -1,4 +1,4 @@
-# openapi_client.model.robot_data.RobotData
+# cloud_api_robot_client.model.robot_data.RobotData
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

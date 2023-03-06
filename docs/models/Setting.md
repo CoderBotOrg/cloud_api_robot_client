@@ -1,4 +1,4 @@
-# openapi_client.model.setting.Setting
+# cloud_api_robot_client.model.setting.Setting
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

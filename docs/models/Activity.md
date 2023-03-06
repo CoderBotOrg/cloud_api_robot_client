@@ -1,4 +1,4 @@
-# openapi_client.model.activity.Activity
+# cloud_api_robot_client.model.activity.Activity
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes

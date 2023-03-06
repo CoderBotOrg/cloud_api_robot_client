@@ -11,9 +11,9 @@ from unittest.mock import patch
 
 import urllib3
 
-import openapi_client
-from openapi_client.paths.robot_data import put  # noqa: E501
-from openapi_client import configuration, schemas, api_client
+import cloud_api_robot_client
+from cloud_api_robot_client.paths.robot_data import put  # noqa: E501
+from cloud_api_robot_client import configuration, schemas, api_client
 
 from .. import ApiTestMixin
 

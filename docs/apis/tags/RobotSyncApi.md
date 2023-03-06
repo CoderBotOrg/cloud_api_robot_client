@@ -1,5 +1,5 @@
 <a name="__pageTop"></a>
-# openapi_client.coderbot.tags.robot_sync_api.RobotSyncApi
+# cloud_api_robot_client.apis.tags.robot_sync_api.RobotSyncApi
 
 All URIs are relative to *https://api.coderbot.org/api/v1*
 
@@ -26,13 +26,13 @@ Get CoderBot current activities
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.activity import Activity
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.activity import Activity
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -42,11 +42,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -55,7 +55,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Get robot activities
         api_response = api_instance.get_robot_activities()
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->get_robot_activities: %s\n" % e)
 ```
 ### Parameters
@@ -121,13 +121,13 @@ Get CoderBot current configuration
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.robot_data import RobotData
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.robot_data import RobotData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -137,11 +137,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -150,7 +150,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Get robot data
         api_response = api_instance.get_robot_data()
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->get_robot_data: %s\n" % e)
 ```
 ### Parameters
@@ -210,13 +210,13 @@ Get CoderBot current programs
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.program import Program
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.program import Program
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -226,11 +226,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -239,7 +239,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Get robot programs
         api_response = api_instance.get_robot_programs()
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->get_robot_programs: %s\n" % e)
 ```
 ### Parameters
@@ -305,13 +305,13 @@ Get CoderBot current setting
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.setting import Setting
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.setting import Setting
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -321,11 +321,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -334,7 +334,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         # Get robot data
         api_response = api_instance.get_robot_setting()
         pprint(api_response)
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->get_robot_setting: %s\n" % e)
 ```
 ### Parameters
@@ -394,13 +394,13 @@ Set CoderBot current activities
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.activity import Activity
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.activity import Activity
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -410,11 +410,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -435,7 +435,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         api_response = api_instance.set_robot_activities(
             body=body,
         )
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_activities: %s\n" % e)
 ```
 ### Parameters
@@ -510,13 +510,13 @@ Get CoderBot current programs
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.program import Program
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.program import Program
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -526,11 +526,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -552,7 +552,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         api_response = api_instance.set_robot_programs(
             body=body,
         )
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_programs: %s\n" % e)
 ```
 ### Parameters
@@ -627,13 +627,13 @@ Get CoderBot current setting
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.setting import Setting
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.setting import Setting
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -643,11 +643,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -666,7 +666,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         api_response = api_instance.set_robot_setting(
             body=body,
         )
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_setting: %s\n" % e)
 ```
 ### Parameters
@@ -735,13 +735,13 @@ Update CoderBot data
 
 * Bearer Authentication (coderbot_auth):
 ```python
-import openapi_client
-from openapi_client.coderbot.tags import robot_sync_api
-from openapi_client.model.robot_data import RobotData
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.robot_data import RobotData
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     host = "https://api.coderbot.org/api/v1"
 )
 
@@ -751,11 +751,11 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: coderbot_auth
-configuration = openapi_client.Configuration(
+configuration = cloud_api_robot_client.Configuration(
     access_token = 'YOUR_BEARER_TOKEN'
 )
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
@@ -772,7 +772,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         api_response = api_instance.update_robot_data(
             body=body,
         )
-    except openapi_client.ApiException as e:
+    except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->update_robot_data: %s\n" % e)
 ```
 ### Parameters
