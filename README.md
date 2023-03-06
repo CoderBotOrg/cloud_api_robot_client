@@ -193,7 +193,6 @@ Class | Method | HTTP request | Description
 
  - [Activity](docs/models/Activity.md)
  - [Program](docs/models/Program.md)
- - [Robot](docs/models/Robot.md)
  - [RobotData](docs/models/RobotData.md)
  - [Setting](docs/models/Setting.md)
 

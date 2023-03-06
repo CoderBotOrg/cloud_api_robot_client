@@ -13,6 +13,5 @@
 
 from openapi_client.model.activity import Activity
 from openapi_client.model.program import Program
-from openapi_client.model.robot import Robot
 from openapi_client.model.robot_data import RobotData
 from openapi_client.model.setting import Setting

@@ -1,12 +1,10 @@
 .gitignore
 .gitlab-ci.yml
-.openapi-generator-ignore
 .travis.yml
 README.md
 docs/apis/tags/RobotSyncApi.md
 docs/models/Activity.md
 docs/models/Program.md
-docs/models/Robot.md
 docs/models/RobotData.md
 docs/models/Setting.md
 git_push.sh
@@ -21,8 +19,6 @@ openapi_client/model/activity.py
 openapi_client/model/activity.pyi
 openapi_client/model/program.py
 openapi_client/model/program.pyi
-openapi_client/model/robot.py
-openapi_client/model/robot.pyi
 openapi_client/model/robot_data.py
 openapi_client/model/robot_data.pyi
 openapi_client/model/setting.py
@@ -36,9 +32,4 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
-test/test_models/test_activity.py
-test/test_models/test_program.py
-test/test_models/test_robot.py
-test/test_models/test_robot_data.py
-test/test_models/test_setting.py
 tox.ini

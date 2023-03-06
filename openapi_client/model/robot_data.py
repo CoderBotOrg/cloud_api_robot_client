@@ -40,6 +40,7 @@ class RobotData(
             id = schemas.StrSchema
             org_id = schemas.StrSchema
             name = schemas.StrSchema
+            modified = schemas.StrSchema
             
             
             class status(
@@ -65,6 +66,7 @@ class RobotData(
                 "id": id,
                 "org_id": org_id,
                 "name": name,
+                "modified": modified,
                 "status": status,
             }
     
@@ -78,12 +80,15 @@ class RobotData(
     def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["modified"]) -> MetaOapg.properties.modified: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "modified", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -98,12 +103,15 @@ class RobotData(
     def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["modified"]) -> typing.Union[MetaOapg.properties.modified, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "modified", "status", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -113,6 +121,7 @@ class RobotData(
         id: typing.Union[MetaOapg.properties.id, str, schemas.Unset] = schemas.unset,
         org_id: typing.Union[MetaOapg.properties.org_id, str, schemas.Unset] = schemas.unset,
         name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        modified: typing.Union[MetaOapg.properties.modified, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -123,6 +132,7 @@ class RobotData(
             id=id,
             org_id=org_id,
             name=name,
+            modified=modified,
             status=status,
             _configuration=_configuration,
             **kwargs,

@@ -384,7 +384,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_activities**
 <a name="set_robot_activities"></a>
-> [Activity] set_robot_activities()
+> set_robot_activities(activity)
 
 Set robot settings
 
@@ -418,16 +418,49 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    body = [
+        Activity(
+            id="10",
+            org_id="10",
+            name="Learn movement",
+            description="First grade students, CoderBot primer",
+            data="{}",
+            modified="2017-07-21T17:32:28Z",
+            status="active",
+        )
+    ]
     try:
         # Set robot settings
-        api_response = api_instance.set_robot_activities()
-        pprint(api_response)
+        api_response = api_instance.set_robot_activities(
+            body=body,
+        )
     except openapi_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_activities: %s\n" % e)
 ```
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
 
 ### Return Types, Responses
 
@@ -442,20 +475,8 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+body | Unset | body was not defined |
 headers | Unset | headers were not defined |
-
-# SchemaFor200ResponseBodyApplicationJson
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-[**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
 
 #### set_robot_activities.ApiResponseFor404
 Name | Type | Description  | Notes
@@ -479,7 +500,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_programs**
 <a name="set_robot_programs"></a>
-> [Program] set_robot_programs()
+> set_robot_programs()
 
 Put robot programs
 
@@ -513,16 +534,50 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only optional values
+    body = [
+        Program(
+            id="10",
+            org_id="10",
+            name="Obstacle avoidance",
+            description="An Obstacle avoidance demo",
+            code="code_example",
+            dom_code="dom_code_example",
+            modified="2017-07-21T17:32:28Z",
+            status="active",
+        )
+    ]
     try:
         # Put robot programs
-        api_response = api_instance.set_robot_programs()
-        pprint(api_response)
+        api_response = api_instance.set_robot_programs(
+            body=body,
+        )
     except openapi_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_programs: %s\n" % e)
 ```
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) |  | 
 
 ### Return Types, Responses
 
@@ -537,20 +592,8 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+body | Unset | body was not defined |
 headers | Unset | headers were not defined |
-
-# SchemaFor200ResponseBodyApplicationJson
-
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-[**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) |  | 
 
 #### set_robot_programs.ApiResponseFor404
 Name | Type | Description  | Notes
@@ -574,7 +617,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_setting**
 <a name="set_robot_setting"></a>
-> Setting set_robot_setting()
+> set_robot_setting(setting)
 
 Set robot settings
 
@@ -608,16 +651,41 @@ with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example, this endpoint has no required or optional parameters
+    # example passing only required values which don't have defaults set
+    body = Setting(
+        id="10",
+        org_id="10",
+        name="EnglishSlow",
+        description="English locale, Slow movements",
+        data="{}",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    )
     try:
         # Set robot settings
-        api_response = api_instance.set_robot_setting()
-        pprint(api_response)
+        api_response = api_instance.set_robot_setting(
+            body=body,
+        )
     except openapi_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_setting: %s\n" % e)
 ```
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Setting**](../../models/Setting.md) |  | 
+
 
 ### Return Types, Responses
 
@@ -632,14 +700,8 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+body | Unset | body was not defined |
 headers | Unset | headers were not defined |
-
-# SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**Setting**](../../models/Setting.md) |  | 
-
 
 #### set_robot_setting.ApiResponseFor404
 Name | Type | Description  | Notes
@@ -663,7 +725,7 @@ headers | Unset | headers were not defined |
 
 # **update_robot_data**
 <a name="update_robot_data"></a>
-> RobotData update_robot_data(robot_data)
+> update_robot_data(robot_data)
 
 Update CoderBot data
 
@@ -702,6 +764,7 @@ with openapi_client.ApiClient(configuration) as api_client:
         id="10",
         org_id="10",
         name="CoderBot 123",
+        modified="2017-07-21T17:32:28Z",
         status="active",
     )
     try:
@@ -709,7 +772,6 @@ with openapi_client.ApiClient(configuration) as api_client:
         api_response = api_instance.update_robot_data(
             body=body,
         )
-        pprint(api_response)
     except openapi_client.ApiException as e:
         print("Exception when calling RobotSyncApi->update_robot_data: %s\n" % e)
 ```
@@ -719,7 +781,6 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
-accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
 skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
@@ -745,14 +806,8 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+body | Unset | body was not defined |
 headers | Unset | headers were not defined |
-
-# SchemaFor200ResponseBodyApplicationJson
-Type | Description  | Notes
-------------- | ------------- | -------------
-[**RobotData**](../../models/RobotData.md) |  | 
-
 
 #### update_robot_data.ApiResponseFor404
 Name | Type | Description  | Notes

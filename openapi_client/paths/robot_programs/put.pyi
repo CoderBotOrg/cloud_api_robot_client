@@ -27,9 +27,10 @@ from openapi_client import schemas  # noqa: F401
 
 from openapi_client.model.program import Program
 
+# body param
 
 
-class SchemaFor200ResponseBodyApplicationJson(
+class SchemaForRequestBodyApplicationJson(
     schemas.ListSchema
 ):
 
@@ -44,7 +45,7 @@ class SchemaFor200ResponseBodyApplicationJson(
         cls,
         _arg: typing.Union[typing.Tuple['Program'], typing.List['Program']],
         _configuration: typing.Optional[schemas.Configuration] = None,
-    ) -> 'SchemaFor200ResponseBodyApplicationJson':
+    ) -> 'SchemaForRequestBodyApplicationJson':
         return super().__new__(
             cls,
             _arg,
@@ -55,21 +56,23 @@ class SchemaFor200ResponseBodyApplicationJson(
         return super().__getitem__(i)
 
 
+request_body_program = api_client.RequestBody(
+    content={
+        'application/json': api_client.MediaType(
+            schema=SchemaForRequestBodyApplicationJson),
+    },
+)
+
+
 @dataclass
 class ApiResponseFor200(api_client.ApiResponse):
     response: urllib3.HTTPResponse
-    body: typing.Union[
-        SchemaFor200ResponseBodyApplicationJson,
-    ]
+    body: schemas.Unset = schemas.unset
     headers: schemas.Unset = schemas.unset
 
 
 _response_for_200 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor200,
-    content={
-        'application/json': api_client.MediaType(
-            schema=SchemaFor200ResponseBodyApplicationJson),
-    },
 )
 
 
@@ -95,16 +98,14 @@ class ApiResponseFor405(api_client.ApiResponse):
 _response_for_405 = api_client.OpenApiResponse(
     response_cls=ApiResponseFor405,
 )
-_all_accept_content_types = (
-    'application/json',
-)
 
 
 class BaseApi(api_client.Api):
     @typing.overload
     def _set_robot_programs_oapg(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: typing_extensions.Literal["application/json"] = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
@@ -115,8 +116,22 @@ class BaseApi(api_client.Api):
     @typing.overload
     def _set_robot_programs_oapg(
         self,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
+        stream: bool = False,
+        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        skip_deserialization: typing_extensions.Literal[False] = ...,
+    ) -> typing.Union[
+        ApiResponseFor200,
+    ]: ...
+
+
+    @typing.overload
+    def _set_robot_programs_oapg(
+        self,
         skip_deserialization: typing_extensions.Literal[True],
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -124,7 +139,8 @@ class BaseApi(api_client.Api):
     @typing.overload
     def _set_robot_programs_oapg(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -135,7 +151,8 @@ class BaseApi(api_client.Api):
 
     def _set_robot_programs_oapg(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = 'application/json',
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
@@ -150,14 +167,22 @@ class BaseApi(api_client.Api):
 
         _headers = HTTPHeaderDict()
         # TODO add cookie handling
-        if accept_content_types:
-            for accept_content_type in accept_content_types:
-                _headers.add('Accept', accept_content_type)
 
+        _fields = None
+        _body = None
+        if body is not schemas.unset:
+            serialized_data = request_body_program.serialize(body, content_type)
+            _headers.add('Content-Type', content_type)
+            if 'fields' in serialized_data:
+                _fields = serialized_data['fields']
+            elif 'body' in serialized_data:
+                _body = serialized_data['body']
         response = self.api_client.call_api(
             resource_path=used_path,
             method='put'.upper(),
             headers=_headers,
+            fields=_fields,
+            body=_body,
             auth_settings=_auth,
             stream=stream,
             timeout=timeout,
@@ -188,7 +213,8 @@ class SetRobotPrograms(BaseApi):
     @typing.overload
     def set_robot_programs(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: typing_extensions.Literal["application/json"] = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
@@ -199,8 +225,22 @@ class SetRobotPrograms(BaseApi):
     @typing.overload
     def set_robot_programs(
         self,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
+        stream: bool = False,
+        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        skip_deserialization: typing_extensions.Literal[False] = ...,
+    ) -> typing.Union[
+        ApiResponseFor200,
+    ]: ...
+
+
+    @typing.overload
+    def set_robot_programs(
+        self,
         skip_deserialization: typing_extensions.Literal[True],
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -208,7 +248,8 @@ class SetRobotPrograms(BaseApi):
     @typing.overload
     def set_robot_programs(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -219,13 +260,15 @@ class SetRobotPrograms(BaseApi):
 
     def set_robot_programs(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = 'application/json',
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
         return self._set_robot_programs_oapg(
-            accept_content_types=accept_content_types,
+            body=body,
+            content_type=content_type,
             stream=stream,
             timeout=timeout,
             skip_deserialization=skip_deserialization
@@ -238,7 +281,8 @@ class ApiForput(BaseApi):
     @typing.overload
     def put(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: typing_extensions.Literal["application/json"] = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: typing_extensions.Literal[False] = ...,
@@ -249,8 +293,22 @@ class ApiForput(BaseApi):
     @typing.overload
     def put(
         self,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
+        stream: bool = False,
+        timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
+        skip_deserialization: typing_extensions.Literal[False] = ...,
+    ) -> typing.Union[
+        ApiResponseFor200,
+    ]: ...
+
+
+    @typing.overload
+    def put(
+        self,
         skip_deserialization: typing_extensions.Literal[True],
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
     ) -> api_client.ApiResponseWithoutDeserialization: ...
@@ -258,7 +316,8 @@ class ApiForput(BaseApi):
     @typing.overload
     def put(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = ...,
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = ...,
@@ -269,13 +328,15 @@ class ApiForput(BaseApi):
 
     def put(
         self,
-        accept_content_types: typing.Tuple[str] = _all_accept_content_types,
+        content_type: str = 'application/json',
+        body: typing.Union[SchemaForRequestBodyApplicationJson, list, tuple, schemas.Unset] = schemas.unset,
         stream: bool = False,
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
         return self._set_robot_programs_oapg(
-            accept_content_types=accept_content_types,
+            body=body,
+            content_type=content_type,
             stream=stream,
             timeout=timeout,
             skip_deserialization=skip_deserialization

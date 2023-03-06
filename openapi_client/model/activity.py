@@ -42,6 +42,7 @@ class Activity(
             name = schemas.StrSchema
             description = schemas.StrSchema
             data = schemas.StrSchema
+            modified = schemas.StrSchema
             
             
             class status(
@@ -69,6 +70,7 @@ class Activity(
                 "name": name,
                 "description": description,
                 "data": data,
+                "modified": modified,
                 "status": status,
             }
     
@@ -88,12 +90,15 @@ class Activity(
     def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["modified"]) -> MetaOapg.properties.modified: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["status"]) -> MetaOapg.properties.status: ...
     
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "modified", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -114,12 +119,15 @@ class Activity(
     def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union[MetaOapg.properties.data, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["modified"]) -> typing.Union[MetaOapg.properties.modified, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["status"]) -> typing.Union[MetaOapg.properties.status, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "modified", "status", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -131,6 +139,7 @@ class Activity(
         name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
         data: typing.Union[MetaOapg.properties.data, str, schemas.Unset] = schemas.unset,
+        modified: typing.Union[MetaOapg.properties.modified, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -143,6 +152,7 @@ class Activity(
             name=name,
             description=description,
             data=data,
+            modified=modified,
             status=status,
             _configuration=_configuration,
             **kwargs,
