@@ -184,8 +184,8 @@ Class | Method | HTTP request | Description
 *RobotSyncApi* | [**get_robot_data**](docs/apis/tags/RobotSyncApi.md#get_robot_data) | **get** /robot/data | Get robot data
 *RobotSyncApi* | [**get_robot_programs**](docs/apis/tags/RobotSyncApi.md#get_robot_programs) | **get** /robot/programs | Get robot programs
 *RobotSyncApi* | [**get_robot_setting**](docs/apis/tags/RobotSyncApi.md#get_robot_setting) | **get** /robot/setting | Get robot data
-*RobotSyncApi* | [**set_robot_activities**](docs/apis/tags/RobotSyncApi.md#set_robot_activities) | **put** /robot/activities | Set robot settings
-*RobotSyncApi* | [**set_robot_programs**](docs/apis/tags/RobotSyncApi.md#set_robot_programs) | **put** /robot/programs | Put robot programs
+*RobotSyncApi* | [**set_robot_activities**](docs/apis/tags/RobotSyncApi.md#set_robot_activities) | **put** /robot/activities/{activity_id} | Set robot settings
+*RobotSyncApi* | [**set_robot_programs**](docs/apis/tags/RobotSyncApi.md#set_robot_programs) | **put** /robot/programs/{program_id} | Put robot programs
 *RobotSyncApi* | [**set_robot_setting**](docs/apis/tags/RobotSyncApi.md#set_robot_setting) | **put** /robot/setting | Set robot settings
 *RobotSyncApi* | [**update_robot_data**](docs/apis/tags/RobotSyncApi.md#update_robot_data) | **put** /robot/data | Update CoderBot data
 

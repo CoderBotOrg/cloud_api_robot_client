@@ -9,8 +9,8 @@ Method | HTTP request | Description
 [**get_robot_data**](#get_robot_data) | **get** /robot/data | Get robot data
 [**get_robot_programs**](#get_robot_programs) | **get** /robot/programs | Get robot programs
 [**get_robot_setting**](#get_robot_setting) | **get** /robot/setting | Get robot data
-[**set_robot_activities**](#set_robot_activities) | **put** /robot/activities | Set robot settings
-[**set_robot_programs**](#set_robot_programs) | **put** /robot/programs | Put robot programs
+[**set_robot_activities**](#set_robot_activities) | **put** /robot/activities/{activity_id} | Set robot settings
+[**set_robot_programs**](#set_robot_programs) | **put** /robot/programs/{program_id} | Put robot programs
 [**set_robot_setting**](#set_robot_setting) | **put** /robot/setting | Set robot settings
 [**update_robot_data**](#update_robot_data) | **put** /robot/data | Update CoderBot data
 
@@ -384,7 +384,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_activities**
 <a name="set_robot_activities"></a>
-> set_robot_activities(activity)
+> set_robot_activities(activity_idactivity)
 
 Set robot settings
 
@@ -419,6 +419,9 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
     # example passing only required values which don't have defaults set
+    path_params = {
+        'activity_id': "activity_id_example",
+    }
     body = [
         Activity(
             id="10",
@@ -433,6 +436,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     try:
         # Set robot settings
         api_response = api_instance.set_robot_activities(
+            path_params=path_params,
             body=body,
         )
     except cloud_api_robot_client.ApiException as e:
@@ -443,6 +447,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
+path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -461,6 +466,20 @@ list, tuple,  | tuple,  |  |
 Class Name | Input Type | Accessed Type | Description | Notes
 ------------- | ------------- | ------------- | ------------- | -------------
 [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+activity_id | ActivityIdSchema | | 
+
+# ActivityIdSchema
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+str,  | str,  |  | 
 
 ### Return Types, Responses
 
@@ -500,7 +519,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_programs**
 <a name="set_robot_programs"></a>
-> set_robot_programs()
+> set_robot_programs(program_id)
 
 Put robot programs
 
@@ -534,22 +553,36 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example passing only optional values
-    body = [
-        Program(
-            id="10",
-            org_id="10",
-            name="Obstacle avoidance",
-            description="An Obstacle avoidance demo",
-            code="code_example",
-            dom_code="dom_code_example",
-            modified="2017-07-21T17:32:28Z",
-            status="active",
-        )
-    ]
+    # example passing only required values which don't have defaults set
+    path_params = {
+        'program_id': "program_id_example",
+    }
     try:
         # Put robot programs
         api_response = api_instance.set_robot_programs(
+            path_params=path_params,
+        )
+    except cloud_api_robot_client.ApiException as e:
+        print("Exception when calling RobotSyncApi->set_robot_programs: %s\n" % e)
+
+    # example passing only optional values
+    path_params = {
+        'program_id': "program_id_example",
+    }
+    body = Program(
+        id="10",
+        org_id="10",
+        name="Obstacle avoidance",
+        description="An Obstacle avoidance demo",
+        code="code_example",
+        dom_code="dom_code_example",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    )
+    try:
+        # Put robot programs
+        api_response = api_instance.set_robot_programs(
+            path_params=path_params,
             body=body,
         )
     except cloud_api_robot_client.ApiException as e:
@@ -560,6 +593,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
@@ -568,16 +602,24 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 ### body
 
 # SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Program**](../../models/Program.md) |  | 
+
+
+### path_params
+#### RequestPathParams
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+program_id | ProgramIdSchema | | 
+
+# ProgramIdSchema
 
 ## Model Type Info
 Input Type | Accessed Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-[**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) | [**Program**]({{complexTypePrefix}}Program.md) |  | 
+str,  | str,  |  | 
 
 ### Return Types, Responses
 

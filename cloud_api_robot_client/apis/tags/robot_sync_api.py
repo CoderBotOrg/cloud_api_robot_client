@@ -14,8 +14,8 @@ from cloud_api_robot_client.paths.robot_activities.get import GetRobotActivities
 from cloud_api_robot_client.paths.robot_data.get import GetRobotData
 from cloud_api_robot_client.paths.robot_programs.get import GetRobotPrograms
 from cloud_api_robot_client.paths.robot_setting.get import GetRobotSetting
-from cloud_api_robot_client.paths.robot_activities.put import SetRobotActivities
-from cloud_api_robot_client.paths.robot_programs.put import SetRobotPrograms
+from cloud_api_robot_client.paths.robot_activities_activity_id.put import SetRobotActivities
+from cloud_api_robot_client.paths.robot_programs_program_id.put import SetRobotPrograms
 from cloud_api_robot_client.paths.robot_setting.put import SetRobotSetting
 from cloud_api_robot_client.paths.robot_data.put import UpdateRobotData
 
