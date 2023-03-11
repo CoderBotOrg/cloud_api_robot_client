@@ -12,9 +12,9 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.model.program import Program
-from openapi_client import configuration
+import cloud_api_robot_client
+from cloud_api_robot_client.model.program import Program
+from cloud_api_robot_client import configuration
 
 
 class TestProgram(unittest.TestCase):

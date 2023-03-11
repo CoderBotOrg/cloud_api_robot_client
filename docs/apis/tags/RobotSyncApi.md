@@ -111,7 +111,7 @@ headers | Unset | headers were not defined |
 
 # **get_robot_data**
 <a name="get_robot_data"></a>
-> RobotData get_robot_data()
+> Robot get_robot_data()
 
 Get robot data
 
@@ -123,7 +123,7 @@ Get CoderBot current configuration
 ```python
 import cloud_api_robot_client
 from cloud_api_robot_client.apis.tags import robot_sync_api
-from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client.model.robot import Robot
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -175,7 +175,7 @@ headers | Unset | headers were not defined |
 # SchemaFor200ResponseBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**RobotData**](../../models/RobotData.md) |  | 
+[**Robot**](../../models/Robot.md) |  | 
 
 
 #### get_robot_data.ApiResponseFor404
@@ -725,7 +725,7 @@ headers | Unset | headers were not defined |
 
 # **update_robot_data**
 <a name="update_robot_data"></a>
-> update_robot_data(robot_data)
+> update_robot_data(robot)
 
 Update CoderBot data
 
@@ -737,7 +737,7 @@ Update CoderBot data
 ```python
 import cloud_api_robot_client
 from cloud_api_robot_client.apis.tags import robot_sync_api
-from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client.model.robot import Robot
 from pprint import pprint
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -760,11 +760,16 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
     # example passing only required values which don't have defaults set
-    body = RobotData(
+    body = Robot(
         id="10",
         org_id="10",
-        name="CoderBot 123",
-        modified="2017-07-21T17:32:28Z",
+        name="CoderBot123",
+        description="The CoderBot 123",
+        setting="setting_example",
+        activities=[
+            "activities_example"
+        ],
+,
         status="active",
     )
     try:
@@ -790,7 +795,7 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 # SchemaForRequestBodyApplicationJson
 Type | Description  | Notes
 ------------- | ------------- | -------------
-[**RobotData**](../../models/RobotData.md) |  | 
+[**Robot**](../../models/Robot.md) |  | 
 
 
 ### Return Types, Responses

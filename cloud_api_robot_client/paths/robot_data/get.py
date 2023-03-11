@@ -25,14 +25,14 @@ import frozendict  # noqa: F401
 
 from cloud_api_robot_client import schemas  # noqa: F401
 
-from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client.model.robot import Robot
 
 from . import path
 
 _auth = [
     'coderbot_auth',
 ]
-SchemaFor200ResponseBodyApplicationJson = RobotData
+SchemaFor200ResponseBodyApplicationJson = Robot
 
 
 @dataclass

@@ -12,9 +12,9 @@
 
 import unittest
 
-import openapi_client
-from openapi_client.model.robot_data import RobotData
-from openapi_client import configuration
+import cloud_api_robot_client
+from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client import configuration
 
 
 class TestRobotData(unittest.TestCase):

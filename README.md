@@ -143,7 +143,7 @@ from pprint import pprint
 from cloud_api_robot_client.apis.tags import robot_sync_api
 from cloud_api_robot_client.model.activity import Activity
 from cloud_api_robot_client.model.program import Program
-from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client.model.robot import Robot
 from cloud_api_robot_client.model.setting import Setting
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -193,7 +193,7 @@ Class | Method | HTTP request | Description
 
  - [Activity](docs/models/Activity.md)
  - [Program](docs/models/Program.md)
- - [RobotData](docs/models/RobotData.md)
+ - [Robot](docs/models/Robot.md)
  - [Setting](docs/models/Setting.md)
 
 ## Documentation For Authorization

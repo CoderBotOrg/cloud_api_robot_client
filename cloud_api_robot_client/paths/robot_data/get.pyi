@@ -25,9 +25,9 @@ import frozendict  # noqa: F401
 
 from cloud_api_robot_client import schemas  # noqa: F401
 
-from cloud_api_robot_client.model.robot_data import RobotData
+from cloud_api_robot_client.model.robot import Robot
 
-SchemaFor200ResponseBodyApplicationJson = RobotData
+SchemaFor200ResponseBodyApplicationJson = Robot
 
 
 @dataclass

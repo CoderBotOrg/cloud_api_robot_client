@@ -13,8 +13,8 @@ cloud_api_robot_client/model/activity.py
 cloud_api_robot_client/model/activity.pyi
 cloud_api_robot_client/model/program.py
 cloud_api_robot_client/model/program.pyi
-cloud_api_robot_client/model/robot_data.py
-cloud_api_robot_client/model/robot_data.pyi
+cloud_api_robot_client/model/robot.py
+cloud_api_robot_client/model/robot.pyi
 cloud_api_robot_client/model/setting.py
 cloud_api_robot_client/model/setting.pyi
 cloud_api_robot_client/models/__init__.py
@@ -23,7 +23,7 @@ cloud_api_robot_client/schemas.py
 docs/apis/tags/RobotSyncApi.md
 docs/models/Activity.md
 docs/models/Program.md
-docs/models/RobotData.md
+docs/models/Robot.md
 docs/models/Setting.md
 git_push.sh
 requirements.txt
@@ -32,4 +32,5 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
+test/test_models/test_robot.py
 tox.ini
