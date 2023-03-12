@@ -42,32 +42,7 @@ request_body_activity = api_client.RequestBody(
 _auth = [
     'coderbot_auth',
 ]
-
-
-class SchemaFor200ResponseBodyApplicationJson(
-    schemas.ListSchema
-):
-
-
-    class MetaOapg:
-        
-        @staticmethod
-        def items() -> typing.Type['Activity']:
-            return Activity
-
-    def __new__(
-        cls,
-        _arg: typing.Union[typing.Tuple['Activity'], typing.List['Activity']],
-        _configuration: typing.Optional[schemas.Configuration] = None,
-    ) -> 'SchemaFor200ResponseBodyApplicationJson':
-        return super().__new__(
-            cls,
-            _arg,
-            _configuration=_configuration,
-        )
-
-    def __getitem__(self, i: int) -> 'Activity':
-        return super().__getitem__(i)
+SchemaFor200ResponseBodyApplicationJson = Activity
 
 
 @dataclass

@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 # **create_robot_activity**
 <a name="create_robot_activity"></a>
-> [Activity] create_robot_activity()
+> Activity create_robot_activity()
 
 Create a new robot activity
 
@@ -107,16 +107,10 @@ body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
 
 # SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Activity**](../../models/Activity.md) |  | 
 
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-[**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
 
 #### create_robot_activity.ApiResponseFor404
 Name | Type | Description  | Notes
