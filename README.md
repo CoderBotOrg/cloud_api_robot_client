@@ -173,11 +173,11 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         data="{}",
         modified="2017-07-21T17:32:28Z",
         status="active",
-    ) # Activity | Activity (optional)
+    ) # Activity | Activity
 
     try:
         # Create a new robot activity
-        api_response = api_instance.create_robot_activity(activity=activity)
+        api_response = api_instance.create_robot_activity(activity)
         pprint(api_response)
     except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->create_robot_activity: %s\n" % e)

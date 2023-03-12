@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 # **create_robot_activity**
 <a name="create_robot_activity"></a>
-> Activity create_robot_activity()
+> Activity create_robot_activity(activity)
 
 Create a new robot activity
 
@@ -52,7 +52,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example passing only optional values
+    # example passing only required values which don't have defaults set
     body = Activity(
         id="10",
         org_id="10",
@@ -75,7 +75,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -134,7 +134,7 @@ headers | Unset | headers were not defined |
 
 # **create_robot_program**
 <a name="create_robot_program"></a>
-> Program create_robot_program()
+> Program create_robot_program(program)
 
 Create new robot program
 
@@ -168,7 +168,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
 
-    # example passing only optional values
+    # example passing only required values which don't have defaults set
     body = Program(
         id="10",
         org_id="10",
@@ -192,7 +192,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
 accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
@@ -619,7 +619,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_activities**
 <a name="set_robot_activities"></a>
-> set_robot_activities(activity_idactivity)
+> Activity set_robot_activities(activity_idactivity)
 
 Set robot settings
 
@@ -657,23 +657,22 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     path_params = {
         'activity_id': "activity_id_example",
     }
-    body = [
-        Activity(
-            id="10",
-            org_id="10",
-            name="Learn movement",
-            description="First grade students, CoderBot primer",
-            data="{}",
-            modified="2017-07-21T17:32:28Z",
-            status="active",
-        )
-    ]
+    body = Activity(
+        id="10",
+        org_id="10",
+        name="Learn movement",
+        description="First grade students, CoderBot primer",
+        data="{}",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    )
     try:
         # Set robot settings
         api_response = api_instance.set_robot_activities(
             path_params=path_params,
             body=body,
         )
+        pprint(api_response)
     except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_activities: %s\n" % e)
 ```
@@ -684,6 +683,7 @@ Name | Type | Description  | Notes
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
 skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
@@ -691,16 +691,10 @@ skip_deserialization | bool | default is False | when True, headers and body wil
 ### body
 
 # SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Activity**](../../models/Activity.md) |  | 
 
-## Model Type Info
-Input Type | Accessed Type | Description | Notes
------------- | ------------- | ------------- | -------------
-list, tuple,  | tuple,  |  | 
-
-### Tuple Items
-Class Name | Input Type | Accessed Type | Description | Notes
-------------- | ------------- | ------------- | ------------- | -------------
-[**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
 
 ### path_params
 #### RequestPathParams
@@ -729,8 +723,14 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Activity**](../../models/Activity.md) |  | 
+
 
 #### set_robot_activities.ApiResponseFor404
 Name | Type | Description  | Notes
@@ -754,7 +754,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_programs**
 <a name="set_robot_programs"></a>
-> set_robot_programs(program_id)
+> Program set_robot_programs(program_idprogram)
 
 Put robot programs
 
@@ -792,18 +792,6 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
     path_params = {
         'program_id': "program_id_example",
     }
-    try:
-        # Put robot programs
-        api_response = api_instance.set_robot_programs(
-            path_params=path_params,
-        )
-    except cloud_api_robot_client.ApiException as e:
-        print("Exception when calling RobotSyncApi->set_robot_programs: %s\n" % e)
-
-    # example passing only optional values
-    path_params = {
-        'program_id': "program_id_example",
-    }
     body = Program(
         id="10",
         org_id="10",
@@ -820,6 +808,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
             path_params=path_params,
             body=body,
         )
+        pprint(api_response)
     except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_programs: %s\n" % e)
 ```
@@ -827,9 +816,10 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 path_params | RequestPathParams | |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
 skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
@@ -869,8 +859,14 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Program**](../../models/Program.md) |  | 
+
 
 #### set_robot_programs.ApiResponseFor404
 Name | Type | Description  | Notes
