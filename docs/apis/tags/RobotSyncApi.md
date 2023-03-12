@@ -5,6 +5,8 @@ All URIs are relative to *https://api.coderbot.org/api/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**create_robot_activity**](#create_robot_activity) | **post** /robot/activities | Create a new robot activity
+[**create_robot_program**](#create_robot_program) | **post** /robot/programs | Create new robot program
 [**get_robot_activities**](#get_robot_activities) | **get** /robot/activities | Get robot activities
 [**get_robot_data**](#get_robot_data) | **get** /robot/data | Get robot data
 [**get_robot_programs**](#get_robot_programs) | **get** /robot/programs | Get robot programs
@@ -13,6 +15,245 @@ Method | HTTP request | Description
 [**set_robot_programs**](#set_robot_programs) | **put** /robot/programs/{program_id} | Put robot programs
 [**set_robot_setting**](#set_robot_setting) | **put** /robot/setting | Set robot settings
 [**update_robot_data**](#update_robot_data) | **put** /robot/data | Update CoderBot data
+
+# **create_robot_activity**
+<a name="create_robot_activity"></a>
+> [Activity] create_robot_activity()
+
+Create a new robot activity
+
+Create a new robot activity
+
+### Example
+
+* Bearer Authentication (coderbot_auth):
+```python
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.activity import Activity
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.coderbot.org/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cloud_api_robot_client.Configuration(
+    host = "https://api.coderbot.org/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: coderbot_auth
+configuration = cloud_api_robot_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+# Enter a context with an instance of the API client
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = robot_sync_api.RobotSyncApi(api_client)
+
+    # example passing only optional values
+    body = Activity(
+        id="10",
+        org_id="10",
+        name="Learn movement",
+        description="First grade students, CoderBot primer",
+        data="{}",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    )
+    try:
+        # Create a new robot activity
+        api_response = api_instance.create_robot_activity(
+            body=body,
+        )
+        pprint(api_response)
+    except cloud_api_robot_client.ApiException as e:
+        print("Exception when calling RobotSyncApi->create_robot_activity: %s\n" % e)
+```
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Activity**](../../models/Activity.md) |  | 
+
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | [ApiResponseFor200](#create_robot_activity.ApiResponseFor200) | Successful operation
+404 | [ApiResponseFor404](#create_robot_activity.ApiResponseFor404) | Not found
+405 | [ApiResponseFor405](#create_robot_activity.ApiResponseFor405) | Invalid input
+
+#### create_robot_activity.ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+
+## Model Type Info
+Input Type | Accessed Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+list, tuple,  | tuple,  |  | 
+
+### Tuple Items
+Class Name | Input Type | Accessed Type | Description | Notes
+------------- | ------------- | ------------- | ------------- | -------------
+[**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) | [**Activity**]({{complexTypePrefix}}Activity.md) |  | 
+
+#### create_robot_activity.ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_robot_activity.ApiResponseFor405
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+### Authorization
+
+[coderbot_auth](../../../README.md#coderbot_auth)
+
+[[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
+
+# **create_robot_program**
+<a name="create_robot_program"></a>
+> Program create_robot_program()
+
+Create new robot program
+
+Create new robot program
+
+### Example
+
+* Bearer Authentication (coderbot_auth):
+```python
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.program import Program
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.coderbot.org/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cloud_api_robot_client.Configuration(
+    host = "https://api.coderbot.org/api/v1"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: coderbot_auth
+configuration = cloud_api_robot_client.Configuration(
+    access_token = 'YOUR_BEARER_TOKEN'
+)
+# Enter a context with an instance of the API client
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = robot_sync_api.RobotSyncApi(api_client)
+
+    # example passing only optional values
+    body = Program(
+        id="10",
+        org_id="10",
+        name="Obstacle avoidance",
+        description="An Obstacle avoidance demo",
+        code="code_example",
+        dom_code="dom_code_example",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    )
+    try:
+        # Create new robot program
+        api_response = api_instance.create_robot_program(
+            body=body,
+        )
+        pprint(api_response)
+    except cloud_api_robot_client.ApiException as e:
+        print("Exception when calling RobotSyncApi->create_robot_program: %s\n" % e)
+```
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Program**](../../models/Program.md) |  | 
+
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | [ApiResponseFor200](#create_robot_program.ApiResponseFor200) | Successful operation
+404 | [ApiResponseFor404](#create_robot_program.ApiResponseFor404) | Not found
+405 | [ApiResponseFor405](#create_robot_program.ApiResponseFor405) | Invalid input
+
+#### create_robot_program.ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Program**](../../models/Program.md) |  | 
+
+
+#### create_robot_program.ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### create_robot_program.ApiResponseFor405
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+### Authorization
+
+[coderbot_auth](../../../README.md#coderbot_auth)
+
+[[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_robot_activities**
 <a name="get_robot_activities"></a>

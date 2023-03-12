@@ -165,13 +165,22 @@ configuration = cloud_api_robot_client.Configuration(
 with cloud_api_robot_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = robot_sync_api.RobotSyncApi(api_client)
-    
+    activity = Activity(
+        id="10",
+        org_id="10",
+        name="Learn movement",
+        description="First grade students, CoderBot primer",
+        data="{}",
+        modified="2017-07-21T17:32:28Z",
+        status="active",
+    ) # Activity | Activity (optional)
+
     try:
-        # Get robot activities
-        api_response = api_instance.get_robot_activities()
+        # Create a new robot activity
+        api_response = api_instance.create_robot_activity(activity=activity)
         pprint(api_response)
     except cloud_api_robot_client.ApiException as e:
-        print("Exception when calling RobotSyncApi->get_robot_activities: %s\n" % e)
+        print("Exception when calling RobotSyncApi->create_robot_activity: %s\n" % e)
 ```
 
 ## Documentation for API Endpoints
@@ -180,6 +189,8 @@ All URIs are relative to *https://api.coderbot.org/api/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*RobotSyncApi* | [**create_robot_activity**](docs/apis/tags/RobotSyncApi.md#create_robot_activity) | **post** /robot/activities | Create a new robot activity
+*RobotSyncApi* | [**create_robot_program**](docs/apis/tags/RobotSyncApi.md#create_robot_program) | **post** /robot/programs | Create new robot program
 *RobotSyncApi* | [**get_robot_activities**](docs/apis/tags/RobotSyncApi.md#get_robot_activities) | **get** /robot/activities | Get robot activities
 *RobotSyncApi* | [**get_robot_data**](docs/apis/tags/RobotSyncApi.md#get_robot_data) | **get** /robot/data | Get robot data
 *RobotSyncApi* | [**get_robot_programs**](docs/apis/tags/RobotSyncApi.md#get_robot_programs) | **get** /robot/programs | Get robot programs
