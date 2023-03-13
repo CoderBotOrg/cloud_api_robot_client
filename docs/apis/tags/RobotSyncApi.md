@@ -890,7 +890,7 @@ headers | Unset | headers were not defined |
 
 # **set_robot_setting**
 <a name="set_robot_setting"></a>
-> set_robot_setting(setting)
+> Setting set_robot_setting(setting)
 
 Set robot settings
 
@@ -939,6 +939,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         api_response = api_instance.set_robot_setting(
             body=body,
         )
+        pprint(api_response)
     except cloud_api_robot_client.ApiException as e:
         print("Exception when calling RobotSyncApi->set_robot_setting: %s\n" % e)
 ```
@@ -948,6 +949,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 body | typing.Union[SchemaForRequestBodyApplicationJson] | required |
 content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
 stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
 timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
 skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
@@ -973,8 +975,14 @@ n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization i
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 response | urllib3.HTTPResponse | Raw response |
-body | Unset | body was not defined |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
 headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**Setting**](../../models/Setting.md) |  | 
+
 
 #### set_robot_setting.ApiResponseFor404
 Name | Type | Description  | Notes

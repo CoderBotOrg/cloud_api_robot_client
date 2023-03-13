@@ -43,20 +43,7 @@ class Activity(
             description = schemas.StrSchema
             data = schemas.StrSchema
             modified = schemas.StrSchema
-            
-            
-            class status(
-                schemas.EnumBase,
-                schemas.StrSchema
-            ):
-                
-                @schemas.classproperty
-                def ACTIVE(cls):
-                    return cls("active")
-                
-                @schemas.classproperty
-                def DEACTIVATED(cls):
-                    return cls("deactivated")
+            status = schemas.StrSchema
             __annotations__ = {
                 "id": id,
                 "org_id": org_id,
