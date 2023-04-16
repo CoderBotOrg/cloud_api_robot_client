@@ -12,12 +12,14 @@
 
 from cloud_api_robot_client.paths.robot_activities.post import CreateRobotActivity
 from cloud_api_robot_client.paths.robot_programs.post import CreateRobotProgram
+from cloud_api_robot_client.paths.robot_activities_activity_id.delete import DeleteRobotActivity
+from cloud_api_robot_client.paths.robot_programs_program_id.delete import DeleteRobotProgram
 from cloud_api_robot_client.paths.robot_activities.get import GetRobotActivities
 from cloud_api_robot_client.paths.robot_data.get import GetRobotData
 from cloud_api_robot_client.paths.robot_programs.get import GetRobotPrograms
 from cloud_api_robot_client.paths.robot_setting.get import GetRobotSetting
-from cloud_api_robot_client.paths.robot_activities_activity_id.put import SetRobotActivities
-from cloud_api_robot_client.paths.robot_programs_program_id.put import SetRobotPrograms
+from cloud_api_robot_client.paths.robot_activities_activity_id.put import SetRobotActivity
+from cloud_api_robot_client.paths.robot_programs_program_id.put import SetRobotProgram
 from cloud_api_robot_client.paths.robot_setting.put import SetRobotSetting
 from cloud_api_robot_client.paths.robot_data.put import UpdateRobotData
 
@@ -25,12 +27,14 @@ from cloud_api_robot_client.paths.robot_data.put import UpdateRobotData
 class RobotSyncApi(
     CreateRobotActivity,
     CreateRobotProgram,
+    DeleteRobotActivity,
+    DeleteRobotProgram,
     GetRobotActivities,
     GetRobotData,
     GetRobotPrograms,
     GetRobotSetting,
-    SetRobotActivities,
-    SetRobotPrograms,
+    SetRobotActivity,
+    SetRobotProgram,
     SetRobotSetting,
     UpdateRobotData,
 ):

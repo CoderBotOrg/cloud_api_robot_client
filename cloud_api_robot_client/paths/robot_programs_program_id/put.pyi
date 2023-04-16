@@ -114,7 +114,7 @@ _all_accept_content_types = (
 
 class BaseApi(api_client.Api):
     @typing.overload
-    def _set_robot_programs_oapg(
+    def _set_robot_program_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -128,7 +128,7 @@ class BaseApi(api_client.Api):
     ]: ...
 
     @typing.overload
-    def _set_robot_programs_oapg(
+    def _set_robot_program_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -143,7 +143,7 @@ class BaseApi(api_client.Api):
 
 
     @typing.overload
-    def _set_robot_programs_oapg(
+    def _set_robot_program_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -155,7 +155,7 @@ class BaseApi(api_client.Api):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def _set_robot_programs_oapg(
+    def _set_robot_program_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -169,7 +169,7 @@ class BaseApi(api_client.Api):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def _set_robot_programs_oapg(
+    def _set_robot_program_oapg(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -180,7 +180,7 @@ class BaseApi(api_client.Api):
         skip_deserialization: bool = False,
     ):
         """
-        Put robot programs
+        Put robot program
         :param skip_deserialization: If true then api_response.response will be set but
             api_response.body and api_response.headers will not be deserialized into schema
             class instances
@@ -248,11 +248,11 @@ class BaseApi(api_client.Api):
         return api_response
 
 
-class SetRobotPrograms(BaseApi):
+class SetRobotProgram(BaseApi):
     # this class is used by api classes that refer to endpoints with operationId fn names
 
     @typing.overload
-    def set_robot_programs(
+    def set_robot_program(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: typing_extensions.Literal["application/json"] = ...,
@@ -266,7 +266,7 @@ class SetRobotPrograms(BaseApi):
     ]: ...
 
     @typing.overload
-    def set_robot_programs(
+    def set_robot_program(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -281,7 +281,7 @@ class SetRobotPrograms(BaseApi):
 
 
     @typing.overload
-    def set_robot_programs(
+    def set_robot_program(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         skip_deserialization: typing_extensions.Literal[True],
@@ -293,7 +293,7 @@ class SetRobotPrograms(BaseApi):
     ) -> api_client.ApiResponseWithoutDeserialization: ...
 
     @typing.overload
-    def set_robot_programs(
+    def set_robot_program(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = ...,
@@ -307,7 +307,7 @@ class SetRobotPrograms(BaseApi):
         api_client.ApiResponseWithoutDeserialization,
     ]: ...
 
-    def set_robot_programs(
+    def set_robot_program(
         self,
         body: typing.Union[SchemaForRequestBodyApplicationJson,],
         content_type: str = 'application/json',
@@ -317,7 +317,7 @@ class SetRobotPrograms(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._set_robot_programs_oapg(
+        return self._set_robot_program_oapg(
             body=body,
             path_params=path_params,
             content_type=content_type,
@@ -397,7 +397,7 @@ class ApiForput(BaseApi):
         timeout: typing.Optional[typing.Union[int, typing.Tuple]] = None,
         skip_deserialization: bool = False,
     ):
-        return self._set_robot_programs_oapg(
+        return self._set_robot_program_oapg(
             body=body,
             path_params=path_params,
             content_type=content_type,

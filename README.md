@@ -191,12 +191,14 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *RobotSyncApi* | [**create_robot_activity**](docs/apis/tags/RobotSyncApi.md#create_robot_activity) | **post** /robot/activities | Create a new robot activity
 *RobotSyncApi* | [**create_robot_program**](docs/apis/tags/RobotSyncApi.md#create_robot_program) | **post** /robot/programs | Create new robot program
+*RobotSyncApi* | [**delete_robot_activity**](docs/apis/tags/RobotSyncApi.md#delete_robot_activity) | **delete** /robot/activities/{activity_id} | Delete robot activity
+*RobotSyncApi* | [**delete_robot_program**](docs/apis/tags/RobotSyncApi.md#delete_robot_program) | **delete** /robot/programs/{program_id} | Delete robot program
 *RobotSyncApi* | [**get_robot_activities**](docs/apis/tags/RobotSyncApi.md#get_robot_activities) | **get** /robot/activities | Get robot activities
 *RobotSyncApi* | [**get_robot_data**](docs/apis/tags/RobotSyncApi.md#get_robot_data) | **get** /robot/data | Get robot data
 *RobotSyncApi* | [**get_robot_programs**](docs/apis/tags/RobotSyncApi.md#get_robot_programs) | **get** /robot/programs | Get robot programs
 *RobotSyncApi* | [**get_robot_setting**](docs/apis/tags/RobotSyncApi.md#get_robot_setting) | **get** /robot/setting | Get robot data
-*RobotSyncApi* | [**set_robot_activities**](docs/apis/tags/RobotSyncApi.md#set_robot_activities) | **put** /robot/activities/{activity_id} | Set robot settings
-*RobotSyncApi* | [**set_robot_programs**](docs/apis/tags/RobotSyncApi.md#set_robot_programs) | **put** /robot/programs/{program_id} | Put robot programs
+*RobotSyncApi* | [**set_robot_activity**](docs/apis/tags/RobotSyncApi.md#set_robot_activity) | **put** /robot/activities/{activity_id} | Set robot activity
+*RobotSyncApi* | [**set_robot_program**](docs/apis/tags/RobotSyncApi.md#set_robot_program) | **put** /robot/programs/{program_id} | Put robot program
 *RobotSyncApi* | [**set_robot_setting**](docs/apis/tags/RobotSyncApi.md#set_robot_setting) | **put** /robot/setting | Set robot settings
 *RobotSyncApi* | [**update_robot_data**](docs/apis/tags/RobotSyncApi.md#update_robot_data) | **put** /robot/data | Update CoderBot data
 

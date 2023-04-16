@@ -21,7 +21,7 @@ from .. import ApiTestMixin
 class TestRobotProgramsProgramId(ApiTestMixin, unittest.TestCase):
     """
     RobotProgramsProgramId unit test stubs
-        Put robot programs  # noqa: E501
+        Put robot program  # noqa: E501
     """
     _configuration = configuration.Configuration()
 
