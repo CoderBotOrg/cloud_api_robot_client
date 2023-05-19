@@ -6,6 +6,7 @@ import enum
 
 
 class PathValues(str, enum.Enum):
+    ROBOT_REGISTER = "/robot/register"
     ROBOT_DATA = "/robot/data"
     ROBOT_SETTING = "/robot/setting"
     ROBOT_ACTIVITIES = "/robot/activities"

@@ -144,6 +144,8 @@ from cloud_api_robot_client.apis.tags import robot_sync_api
 from cloud_api_robot_client.model.activity import Activity
 from cloud_api_robot_client.model.program import Program
 from cloud_api_robot_client.model.robot import Robot
+from cloud_api_robot_client.model.robot_credentials import RobotCredentials
+from cloud_api_robot_client.model.robot_register_data import RobotRegisterData
 from cloud_api_robot_client.model.setting import Setting
 # Defining the host is optional and defaults to https://api.coderbot.org/api/v1
 # See configuration.py for a list of all supported configuration parameters.
@@ -197,6 +199,7 @@ Class | Method | HTTP request | Description
 *RobotSyncApi* | [**get_robot_data**](docs/apis/tags/RobotSyncApi.md#get_robot_data) | **get** /robot/data | Get robot data
 *RobotSyncApi* | [**get_robot_programs**](docs/apis/tags/RobotSyncApi.md#get_robot_programs) | **get** /robot/programs | Get robot programs
 *RobotSyncApi* | [**get_robot_setting**](docs/apis/tags/RobotSyncApi.md#get_robot_setting) | **get** /robot/setting | Get robot data
+*RobotSyncApi* | [**register_robot**](docs/apis/tags/RobotSyncApi.md#register_robot) | **post** /robot/register | Register robot with OTP
 *RobotSyncApi* | [**set_robot_activity**](docs/apis/tags/RobotSyncApi.md#set_robot_activity) | **put** /robot/activities/{activity_id} | Set robot activity
 *RobotSyncApi* | [**set_robot_program**](docs/apis/tags/RobotSyncApi.md#set_robot_program) | **put** /robot/programs/{program_id} | Put robot program
 *RobotSyncApi* | [**set_robot_setting**](docs/apis/tags/RobotSyncApi.md#set_robot_setting) | **put** /robot/setting | Set robot settings
@@ -207,6 +210,8 @@ Class | Method | HTTP request | Description
  - [Activity](docs/models/Activity.md)
  - [Program](docs/models/Program.md)
  - [Robot](docs/models/Robot.md)
+ - [RobotCredentials](docs/models/RobotCredentials.md)
+ - [RobotRegisterData](docs/models/RobotRegisterData.md)
  - [Setting](docs/models/Setting.md)
 
 ## Documentation For Authorization

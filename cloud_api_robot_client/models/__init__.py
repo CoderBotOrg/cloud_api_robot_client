@@ -14,4 +14,6 @@
 from cloud_api_robot_client.model.activity import Activity
 from cloud_api_robot_client.model.program import Program
 from cloud_api_robot_client.model.robot import Robot
+from cloud_api_robot_client.model.robot_credentials import RobotCredentials
+from cloud_api_robot_client.model.robot_register_data import RobotRegisterData
 from cloud_api_robot_client.model.setting import Setting

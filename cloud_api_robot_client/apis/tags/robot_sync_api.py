@@ -18,6 +18,7 @@ from cloud_api_robot_client.paths.robot_activities.get import GetRobotActivities
 from cloud_api_robot_client.paths.robot_data.get import GetRobotData
 from cloud_api_robot_client.paths.robot_programs.get import GetRobotPrograms
 from cloud_api_robot_client.paths.robot_setting.get import GetRobotSetting
+from cloud_api_robot_client.paths.robot_register.post import RegisterRobot
 from cloud_api_robot_client.paths.robot_activities_activity_id.put import SetRobotActivity
 from cloud_api_robot_client.paths.robot_programs_program_id.put import SetRobotProgram
 from cloud_api_robot_client.paths.robot_setting.put import SetRobotSetting
@@ -33,6 +34,7 @@ class RobotSyncApi(
     GetRobotData,
     GetRobotPrograms,
     GetRobotSetting,
+    RegisterRobot,
     SetRobotActivity,
     SetRobotProgram,
     SetRobotSetting,

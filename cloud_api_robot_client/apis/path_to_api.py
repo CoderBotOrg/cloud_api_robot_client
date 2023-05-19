@@ -1,6 +1,7 @@
 import typing_extensions
 
 from cloud_api_robot_client.paths import PathValues
+from cloud_api_robot_client.apis.paths.robot_register import RobotRegister
 from cloud_api_robot_client.apis.paths.robot_data import RobotData
 from cloud_api_robot_client.apis.paths.robot_setting import RobotSetting
 from cloud_api_robot_client.apis.paths.robot_activities import RobotActivities
@@ -11,6 +12,7 @@ from cloud_api_robot_client.apis.paths.robot_programs_program_id import RobotPro
 PathToApi = typing_extensions.TypedDict(
     'PathToApi',
     {
+        PathValues.ROBOT_REGISTER: RobotRegister,
         PathValues.ROBOT_DATA: RobotData,
         PathValues.ROBOT_SETTING: RobotSetting,
         PathValues.ROBOT_ACTIVITIES: RobotActivities,
@@ -22,6 +24,7 @@ PathToApi = typing_extensions.TypedDict(
 
 path_to_api = PathToApi(
     {
+        PathValues.ROBOT_REGISTER: RobotRegister,
         PathValues.ROBOT_DATA: RobotData,
         PathValues.ROBOT_SETTING: RobotSetting,
         PathValues.ROBOT_ACTIVITIES: RobotActivities,

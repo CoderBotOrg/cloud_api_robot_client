@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**get_robot_data**](#get_robot_data) | **get** /robot/data | Get robot data
 [**get_robot_programs**](#get_robot_programs) | **get** /robot/programs | Get robot programs
 [**get_robot_setting**](#get_robot_setting) | **get** /robot/setting | Get robot data
+[**register_robot**](#register_robot) | **post** /robot/register | Register robot with OTP
 [**set_robot_activity**](#set_robot_activity) | **put** /robot/activities/{activity_id} | Set robot activity
 [**set_robot_program**](#set_robot_program) | **put** /robot/programs/{program_id} | Put robot program
 [**set_robot_setting**](#set_robot_setting) | **put** /robot/setting | Set robot settings
@@ -828,6 +829,107 @@ headers | Unset | headers were not defined |
 ### Authorization
 
 [coderbot_auth](../../../README.md#coderbot_auth)
+
+[[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
+
+# **register_robot**
+<a name="register_robot"></a>
+> RobotCredentials register_robot()
+
+Register robot with OTP
+
+Register robot with OTP
+
+### Example
+
+```python
+import cloud_api_robot_client
+from cloud_api_robot_client.apis.tags import robot_sync_api
+from cloud_api_robot_client.model.robot_register_data import RobotRegisterData
+from cloud_api_robot_client.model.robot_credentials import RobotCredentials
+from pprint import pprint
+# Defining the host is optional and defaults to https://api.coderbot.org/api/v1
+# See configuration.py for a list of all supported configuration parameters.
+configuration = cloud_api_robot_client.Configuration(
+    host = "https://api.coderbot.org/api/v1"
+)
+
+# Enter a context with an instance of the API client
+with cloud_api_robot_client.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = robot_sync_api.RobotSyncApi(api_client)
+
+    # example passing only optional values
+    body = RobotRegisterData(
+        otp="AB123456CD",
+    )
+    try:
+        # Register robot with OTP
+        api_response = api_instance.register_robot(
+            body=body,
+        )
+        pprint(api_response)
+    except cloud_api_robot_client.ApiException as e:
+        print("Exception when calling RobotSyncApi->register_robot: %s\n" % e)
+```
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+body | typing.Union[SchemaForRequestBodyApplicationJson, Unset] | optional, default is unset |
+content_type | str | optional, default is 'application/json' | Selects the schema and serialization of the request body
+accept_content_types | typing.Tuple[str] | default is ('application/json', ) | Tells the server the content type(s) that are accepted by the client
+stream | bool | default is False | if True then the response.content will be streamed and loaded from a file like object. When downloading a file, set this to True to force the code to deserialize the content to a FileSchema file
+timeout | typing.Optional[typing.Union[int, typing.Tuple]] | default is None | the timeout used by the rest client
+skip_deserialization | bool | default is False | when True, headers and body will be unset and an instance of api_client.ApiResponseWithoutDeserialization will be returned
+
+### body
+
+# SchemaForRequestBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**RobotRegisterData**](../../models/RobotRegisterData.md) |  | 
+
+
+### Return Types, Responses
+
+Code | Class | Description
+------------- | ------------- | -------------
+n/a | api_client.ApiResponseWithoutDeserialization | When skip_deserialization is True this response is returned
+200 | [ApiResponseFor200](#register_robot.ApiResponseFor200) | Successful operation
+404 | [ApiResponseFor404](#register_robot.ApiResponseFor404) | Not found
+405 | [ApiResponseFor405](#register_robot.ApiResponseFor405) | Invalid input
+
+#### register_robot.ApiResponseFor200
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | typing.Union[SchemaFor200ResponseBodyApplicationJson, ] |  |
+headers | Unset | headers were not defined |
+
+# SchemaFor200ResponseBodyApplicationJson
+Type | Description  | Notes
+------------- | ------------- | -------------
+[**RobotCredentials**](../../models/RobotCredentials.md) |  | 
+
+
+#### register_robot.ApiResponseFor404
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+#### register_robot.ApiResponseFor405
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+response | urllib3.HTTPResponse | Raw response |
+body | Unset | body was not defined |
+headers | Unset | headers were not defined |
+
+### Authorization
+
+No authorization required
 
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
