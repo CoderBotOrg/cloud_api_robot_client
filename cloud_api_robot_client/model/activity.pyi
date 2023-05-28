@@ -42,14 +42,42 @@ class Activity(
             name = schemas.StrSchema
             description = schemas.StrSchema
             data = schemas.StrSchema
+            
+            
+            class kind(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def STOCK(cls):
+                    return cls("stock")
+                
+                @schemas.classproperty
+                def USER(cls):
+                    return cls("user")
             modified = schemas.StrSchema
-            status = schemas.StrSchema
+            
+            
+            class status(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+                
+                @schemas.classproperty
+                def ACTIVE(cls):
+                    return cls("active")
+                
+                @schemas.classproperty
+                def DEACTIVATED(cls):
+                    return cls("deactivated")
             __annotations__ = {
                 "id": id,
                 "org_id": org_id,
                 "name": name,
                 "description": description,
                 "data": data,
+                "kind": kind,
                 "modified": modified,
                 "status": status,
             }
@@ -70,6 +98,9 @@ class Activity(
     def __getitem__(self, name: typing_extensions.Literal["data"]) -> MetaOapg.properties.data: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["kind"]) -> MetaOapg.properties.kind: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["modified"]) -> MetaOapg.properties.modified: ...
     
     @typing.overload
@@ -78,7 +109,7 @@ class Activity(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "modified", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "kind", "modified", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -99,6 +130,9 @@ class Activity(
     def get_item_oapg(self, name: typing_extensions.Literal["data"]) -> typing.Union[MetaOapg.properties.data, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["kind"]) -> typing.Union[MetaOapg.properties.kind, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["modified"]) -> typing.Union[MetaOapg.properties.modified, schemas.Unset]: ...
     
     @typing.overload
@@ -107,7 +141,7 @@ class Activity(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "modified", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "data", "kind", "modified", "status", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -119,6 +153,7 @@ class Activity(
         name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
         description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
         data: typing.Union[MetaOapg.properties.data, str, schemas.Unset] = schemas.unset,
+        kind: typing.Union[MetaOapg.properties.kind, str, schemas.Unset] = schemas.unset,
         modified: typing.Union[MetaOapg.properties.modified, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -132,6 +167,7 @@ class Activity(
             name=name,
             description=description,
             data=data,
+            kind=kind,
             modified=modified,
             status=status,
             _configuration=_configuration,

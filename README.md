@@ -173,6 +173,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         name="Learn movement",
         description="First grade students, CoderBot primer",
         data="{}",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     ) # Activity | Activity

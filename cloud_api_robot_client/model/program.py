@@ -43,6 +43,27 @@ class Program(
             description = schemas.StrSchema
             code = schemas.StrSchema
             dom_code = schemas.StrSchema
+            
+            
+            class kind(
+                schemas.EnumBase,
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    enum_value_to_name = {
+                        "stock": "STOCK",
+                        "user": "USER",
+                    }
+                
+                @schemas.classproperty
+                def STOCK(cls):
+                    return cls("stock")
+                
+                @schemas.classproperty
+                def USER(cls):
+                    return cls("user")
             modified = schemas.StrSchema
             
             
@@ -72,6 +93,7 @@ class Program(
                 "description": description,
                 "code": code,
                 "dom_code": dom_code,
+                "kind": kind,
                 "modified": modified,
                 "status": status,
             }
@@ -95,6 +117,9 @@ class Program(
     def __getitem__(self, name: typing_extensions.Literal["dom_code"]) -> MetaOapg.properties.dom_code: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["kind"]) -> MetaOapg.properties.kind: ...
+    
+    @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["modified"]) -> MetaOapg.properties.modified: ...
     
     @typing.overload
@@ -103,7 +128,7 @@ class Program(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "code", "dom_code", "modified", "status", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "code", "dom_code", "kind", "modified", "status", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -127,6 +152,9 @@ class Program(
     def get_item_oapg(self, name: typing_extensions.Literal["dom_code"]) -> typing.Union[MetaOapg.properties.dom_code, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["kind"]) -> typing.Union[MetaOapg.properties.kind, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["modified"]) -> typing.Union[MetaOapg.properties.modified, schemas.Unset]: ...
     
     @typing.overload
@@ -135,7 +163,7 @@ class Program(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "code", "dom_code", "modified", "status", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["id", "org_id", "name", "description", "code", "dom_code", "kind", "modified", "status", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -148,6 +176,7 @@ class Program(
         description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
         code: typing.Union[MetaOapg.properties.code, str, schemas.Unset] = schemas.unset,
         dom_code: typing.Union[MetaOapg.properties.dom_code, str, schemas.Unset] = schemas.unset,
+        kind: typing.Union[MetaOapg.properties.kind, str, schemas.Unset] = schemas.unset,
         modified: typing.Union[MetaOapg.properties.modified, str, schemas.Unset] = schemas.unset,
         status: typing.Union[MetaOapg.properties.status, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
@@ -162,6 +191,7 @@ class Program(
             description=description,
             code=code,
             dom_code=dom_code,
+            kind=kind,
             modified=modified,
             status=status,
             _configuration=_configuration,

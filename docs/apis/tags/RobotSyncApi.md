@@ -62,6 +62,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         name="Learn movement",
         description="First grade students, CoderBot primer",
         data="{}",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     )
@@ -179,6 +180,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         description="An Obstacle avoidance demo",
         code="code_example",
         dom_code="dom_code_example",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     )
@@ -979,6 +981,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         name="Learn movement",
         description="First grade students, CoderBot primer",
         data="{}",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     )
@@ -1115,6 +1118,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         description="An Obstacle avoidance demo",
         code="code_example",
         dom_code="dom_code_example",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     )
@@ -1247,6 +1251,7 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
         name="EnglishSlow",
         description="English locale, Slow movements",
         data="{}",
+        kind="stock",
         modified="2017-07-21T17:32:28Z",
         status="active",
     )

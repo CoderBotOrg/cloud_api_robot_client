@@ -38,6 +38,4 @@ setup.py
 test-requirements.txt
 test/__init__.py
 test/test_models/__init__.py
-test/test_models/test_robot_credentials.py
-test/test_models/test_robot_register_data.py
 tox.ini
