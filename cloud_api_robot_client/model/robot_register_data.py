@@ -37,10 +37,38 @@ class RobotRegisterData(
     class MetaOapg:
         
         class properties:
+            
+            
+            class name(
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    max_length = 64
+                    min_length = 1
+            
+            
+            class description(
+                schemas.StrSchema
+            ):
+            
+            
+                class MetaOapg:
+                    max_length = 256
+                    min_length = 0
             otp = schemas.StrSchema
             __annotations__ = {
+                "name": name,
+                "description": description,
                 "otp": otp,
             }
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["name"]) -> MetaOapg.properties.name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["description"]) -> MetaOapg.properties.description: ...
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["otp"]) -> MetaOapg.properties.otp: ...
@@ -48,10 +76,16 @@ class RobotRegisterData(
     @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["otp", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["name", "description", "otp", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["name"]) -> typing.Union[MetaOapg.properties.name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["description"]) -> typing.Union[MetaOapg.properties.description, schemas.Unset]: ...
     
     @typing.overload
     def get_item_oapg(self, name: typing_extensions.Literal["otp"]) -> typing.Union[MetaOapg.properties.otp, schemas.Unset]: ...
@@ -59,13 +93,15 @@ class RobotRegisterData(
     @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["otp", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["name", "description", "otp", ], str]):
         return super().get_item_oapg(name)
     
 
     def __new__(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
+        name: typing.Union[MetaOapg.properties.name, str, schemas.Unset] = schemas.unset,
+        description: typing.Union[MetaOapg.properties.description, str, schemas.Unset] = schemas.unset,
         otp: typing.Union[MetaOapg.properties.otp, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
@@ -73,6 +109,8 @@ class RobotRegisterData(
         return super().__new__(
             cls,
             *_args,
+            name=name,
+            description=description,
             otp=otp,
             _configuration=_configuration,
             **kwargs,

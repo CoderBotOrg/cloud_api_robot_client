@@ -863,6 +863,8 @@ with cloud_api_robot_client.ApiClient(configuration) as api_client:
 
     # example passing only optional values
     body = RobotRegisterData(
+        name="CoderBot 9000",
+        description="My New CoderBot",
         otp="AB123456CD",
     )
     try:

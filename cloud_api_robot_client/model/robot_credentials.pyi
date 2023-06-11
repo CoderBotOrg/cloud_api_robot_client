@@ -38,17 +38,37 @@ class RobotCredentials(
         
         class properties:
             token = schemas.StrSchema
+            
+            
+            class org_name(
+                schemas.StrSchema
+            ):
+                pass
+            
+            
+            class org_description(
+                schemas.StrSchema
+            ):
+                pass
             __annotations__ = {
                 "token": token,
+                "org_name": org_name,
+                "org_description": org_description,
             }
     
     @typing.overload
     def __getitem__(self, name: typing_extensions.Literal["token"]) -> MetaOapg.properties.token: ...
     
     @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["org_name"]) -> MetaOapg.properties.org_name: ...
+    
+    @typing.overload
+    def __getitem__(self, name: typing_extensions.Literal["org_description"]) -> MetaOapg.properties.org_description: ...
+    
+    @typing.overload
     def __getitem__(self, name: str) -> schemas.UnsetAnyTypeSchema: ...
     
-    def __getitem__(self, name: typing.Union[typing_extensions.Literal["token", ], str]):
+    def __getitem__(self, name: typing.Union[typing_extensions.Literal["token", "org_name", "org_description", ], str]):
         # dict_instance[name] accessor
         return super().__getitem__(name)
     
@@ -57,9 +77,15 @@ class RobotCredentials(
     def get_item_oapg(self, name: typing_extensions.Literal["token"]) -> typing.Union[MetaOapg.properties.token, schemas.Unset]: ...
     
     @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["org_name"]) -> typing.Union[MetaOapg.properties.org_name, schemas.Unset]: ...
+    
+    @typing.overload
+    def get_item_oapg(self, name: typing_extensions.Literal["org_description"]) -> typing.Union[MetaOapg.properties.org_description, schemas.Unset]: ...
+    
+    @typing.overload
     def get_item_oapg(self, name: str) -> typing.Union[schemas.UnsetAnyTypeSchema, schemas.Unset]: ...
     
-    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["token", ], str]):
+    def get_item_oapg(self, name: typing.Union[typing_extensions.Literal["token", "org_name", "org_description", ], str]):
         return super().get_item_oapg(name)
     
 
@@ -67,6 +93,8 @@ class RobotCredentials(
         cls,
         *_args: typing.Union[dict, frozendict.frozendict, ],
         token: typing.Union[MetaOapg.properties.token, str, schemas.Unset] = schemas.unset,
+        org_name: typing.Union[MetaOapg.properties.org_name, str, schemas.Unset] = schemas.unset,
+        org_description: typing.Union[MetaOapg.properties.org_description, str, schemas.Unset] = schemas.unset,
         _configuration: typing.Optional[schemas.Configuration] = None,
         **kwargs: typing.Union[schemas.AnyTypeSchema, dict, frozendict.frozendict, str, date, datetime, uuid.UUID, int, float, decimal.Decimal, None, list, tuple, bytes],
     ) -> 'RobotCredentials':
@@ -74,6 +102,8 @@ class RobotCredentials(
             cls,
             *_args,
             token=token,
+            org_name=org_name,
+            org_description=org_description,
             _configuration=_configuration,
             **kwargs,
         )
