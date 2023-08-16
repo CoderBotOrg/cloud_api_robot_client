@@ -1,4 +1,4 @@
-<a name="__pageTop"></a>
+<a id="__pageTop"></a>
 # cloud_api_robot_client.apis.tags.robot_sync_api.RobotSyncApi
 
 All URIs are relative to *https://api.coderbot.org/api/v1*
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 [**update_robot_data**](#update_robot_data) | **put** /robot/data | Update CoderBot data
 
 # **create_robot_activity**
-<a name="create_robot_activity"></a>
+<a id="create_robot_activity"></a>
 > Activity create_robot_activity(activity)
 
 Create a new robot activity
@@ -137,7 +137,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **create_robot_program**
-<a name="create_robot_program"></a>
+<a id="create_robot_program"></a>
 > Program create_robot_program(program)
 
 Create new robot program
@@ -255,7 +255,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **delete_robot_activity**
-<a name="delete_robot_activity"></a>
+<a id="delete_robot_activity"></a>
 > delete_robot_activity(activity_id)
 
 Delete robot activity
@@ -361,7 +361,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **delete_robot_program**
-<a name="delete_robot_program"></a>
+<a id="delete_robot_program"></a>
 > delete_robot_program(program_id)
 
 Delete robot program
@@ -467,7 +467,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_robot_activities**
-<a name="get_robot_activities"></a>
+<a id="get_robot_activities"></a>
 > [Activity] get_robot_activities()
 
 Get robot activities
@@ -562,7 +562,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_robot_data**
-<a name="get_robot_data"></a>
+<a id="get_robot_data"></a>
 > Robot get_robot_data()
 
 Get robot data
@@ -651,7 +651,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_robot_programs**
-<a name="get_robot_programs"></a>
+<a id="get_robot_programs"></a>
 > [Program] get_robot_programs()
 
 Get robot programs
@@ -746,7 +746,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **get_robot_setting**
-<a name="get_robot_setting"></a>
+<a id="get_robot_setting"></a>
 > Setting get_robot_setting()
 
 Get robot data
@@ -835,7 +835,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **register_robot**
-<a name="register_robot"></a>
+<a id="register_robot"></a>
 > RobotCredentials register_robot()
 
 Register robot with OTP
@@ -938,7 +938,7 @@ No authorization required
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **set_robot_activity**
-<a name="set_robot_activity"></a>
+<a id="set_robot_activity"></a>
 > Activity set_robot_activity(activity_idactivity)
 
 Set robot activity
@@ -1074,7 +1074,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **set_robot_program**
-<a name="set_robot_program"></a>
+<a id="set_robot_program"></a>
 > Program set_robot_program(program_idprogram)
 
 Put robot program
@@ -1211,7 +1211,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **set_robot_setting**
-<a name="set_robot_setting"></a>
+<a id="set_robot_setting"></a>
 > Setting set_robot_setting(setting)
 
 Set robot settings
@@ -1328,7 +1328,7 @@ headers | Unset | headers were not defined |
 [[Back to top]](#__pageTop) [[Back to API list]](../../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../../README.md#documentation-for-models) [[Back to README]](../../../README.md)
 
 # **update_robot_data**
-<a name="update_robot_data"></a>
+<a id="update_robot_data"></a>
 > update_robot_data(robot)
 
 Update CoderBot data

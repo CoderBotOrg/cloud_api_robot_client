@@ -217,8 +217,9 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
- Authentication schemes defined for the API:
-## coderbot_auth
+Authentication schemes defined for the API:
+<a id="coderbot_auth"></a>
+### coderbot_auth
 
 - **Type**: Bearer authentication
 

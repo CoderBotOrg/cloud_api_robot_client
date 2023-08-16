@@ -91,6 +91,7 @@ class Configuration(object):
         server_variables=None,
         server_operation_index=None,
         server_operation_variables=None,
+        access_token=None,
     ):
         """Constructor
         """
@@ -110,6 +111,9 @@ class Configuration(object):
         """
         # Authentication Settings
         self.disabled_client_side_validations = disabled_client_side_validations
+        self.access_token = None
+        """access token for OAuth/Bearer
+        """
         self.logger = {}
         """Logging Settings
         """
@@ -147,6 +151,10 @@ class Configuration(object):
         """
         self.assert_hostname = None
         """Set this to True/False to enable/disable SSL hostname verification.
+        """
+        self.tls_server_name = None
+        """SSL/TLS Server Name Indication (SNI)
+           Set this to the SNI value expected by the server.
         """
 
         self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
